@@ -13,3 +13,7 @@ I enjoy exploring places and taking long walks. I enjoy going for long runs with
 Realizing the perks of the freedom that comes with my age allowed me to find new ways to do things I enjoy. I started being happier because I started having more fun in life when I started to participate in activities I saw on the internet and thought I would enjoy. 
 
 March 23rd 2021.
+
+layout: page
+title: "Freedom"
+permalink: /Thoughts/
