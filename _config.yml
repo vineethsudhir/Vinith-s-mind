@@ -1,1 +1,9 @@
+twitter_url: https://twitter.com/vineeth_sudhir
+facebook_url: 
+instagram_url: https://www.instagram.com/vineeth.sudhir/
+linkedin_url: https://www.linkedin.com/in/vinithsudhir/
+github_url: https://github.com/vineethsudhi
+
 theme: jekyll-theme-minimal
+
+collections: [Thoughts]
