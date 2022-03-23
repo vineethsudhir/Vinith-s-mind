@@ -14,6 +14,7 @@ Realizing the perks of the freedom that comes with my age allowed me to find new
 
 March 23rd 2021.
 
-layout: page
+layout: post
 title: "Freedom"
-permalink: /Thoughts/
+date: 2022-03-23 
+categories: Thoughts
