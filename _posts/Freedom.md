@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Freedom"
+date: 2022-03-23 
+categories: Thoughts
+---
+
 ## Perks of being young.
 
 I am a 23 year old at the moment, one of the perks of my current age is the freedom I have. I have the freedom to take impulsive decisions. I can do whatever I want to do right away. I do not know till when I will be able to enjoy this freedom. In my opinion, it is foolish to not make good use of this freedom.
@@ -14,7 +21,5 @@ Realizing the perks of the freedom that comes with my age allowed me to find new
 
 March 23rd 2021.
 
-layout: post
-title: "Freedom"
-date: 2022-03-23 
-categories: Thoughts
+
+
