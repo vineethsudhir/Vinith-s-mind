@@ -1,4 +1,6 @@
+---
 permalink: /_posts
+---
 
 ## Welcome to my blog.
 
