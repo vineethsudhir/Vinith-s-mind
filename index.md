@@ -1,7 +1,3 @@
----
-permalink: /_posts
----
-
 ## Welcome to my blog.
 
 This blog will be written with no real goal in mind. It is going to be random. I might just sum up my thoughts one day; write my coding experience the other day.
