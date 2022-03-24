@@ -13,10 +13,6 @@ Syntax highlighted code block
 You can expect some code blocks in my blog.
 ```
 
-### Jekyll Themes
+### Other Posts
 
-I am Using Jekyll to build this blog. 
-
-Do I no ruby? NO.
-But I am using Jekyll anyway because I want to get the pages up and running with as little effort as possible.
-
+[Freedom](./_posts/freedom.md)
