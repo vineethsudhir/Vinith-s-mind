@@ -17,4 +17,4 @@ You can expect some code blocks in my blog.
 
 ### Other Posts
 
-[Freedom](/Freedom)
+[Freedom](/_posts/Freedom.md)
