@@ -15,4 +15,6 @@ You can expect some code blocks in my blog.
 
 ### Other Posts
 
-[Freedom](/_posts/Freedom.md)
+[Freedom](/_posts/2022-03-23-Freedom.md)
+
+[Admit it](/_posts/2022-03-23-Admit.md)
