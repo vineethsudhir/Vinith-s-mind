@@ -3,6 +3,7 @@ layout: post
 title: "Freedom"
 date: 2022-03-23 
 categories: Thoughts
+permalink: /Freedom
 ---
 
 ## Perks of being young.
