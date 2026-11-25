@@ -17,7 +17,7 @@ npm run dev        # open http://localhost:4321
 
 | To change | Edit |
 | --- | --- |
-| Your X (Twitter) handle, Strava and other profile links | `TWITTER`, `STRAVA_ID` and `links` in `src/data/site.ts` |
+| Your X (Twitter) handle, Strava, Substack and other profile links | `TWITTER`, `STRAVA_ID`, `substack` and `links` in `src/data/site.ts` |
 | The timeline, "What I built", and projects on the home page | `src/data/site.ts` |
 | The text on the About page | `src/pages/about.astro` |
 | The headline and the text on the home page | `src/pages/index.astro` |

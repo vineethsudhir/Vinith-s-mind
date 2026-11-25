@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { links } from '../data/site';
+import { links, substack } from '../data/site';
 
 interface Props {
   title?: string;
@@ -51,6 +51,7 @@ const current = (href: string) => (href === '/' ? path === '/' : path.startsWith
           <a href="/about/" aria-current={current('/about/')}>About</a>
           <a href="/blog/" aria-current={current('/blog/')}>Blog</a>
           <a href="/resume/" aria-current={current('/resume/')}>Resume</a>
+          {substack && <a href={substack}>Newsletter</a>}
           <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
             <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"
               ><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"

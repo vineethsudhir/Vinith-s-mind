@@ -4,6 +4,11 @@
 const TWITTER = 'VineethSudhir';
 const STRAVA_ID = '38678674';
 
+// Your Substack. It shows as "Newsletter" in the menu, as a subscribe note on the blog page,
+// and with your other profile links. Leave it empty to hide all of these.
+// If you move Substack to your own domain (for example blog.vinith.in), change it here.
+export const substack = 'https://substack.com/@vinithsudhir';
+
 export const strava = STRAVA_ID ? `https://www.strava.com/athletes/${STRAVA_ID}` : '';
 
 export const links = [
@@ -11,6 +16,7 @@ export const links = [
   { label: 'GitHub', href: 'https://github.com/vineethsudhir' },
   ...(TWITTER ? [{ label: 'X (Twitter)', href: `https://x.com/${TWITTER}` }] : []),
   ...(strava ? [{ label: 'Strava', href: strava }] : []),
+  ...(substack ? [{ label: 'Substack', href: substack }] : []),
 ];
 
 // Edit this file to update the home page. Newest entry first.
