@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Resume" description="Resume of Vinith Sudhir, backend engineer.">
+  <div class="wrap">
+    <h1>Resume</h1>
+    <p>
+      Backend engineer with 5 years of experience: Java services on AWS, search, and distributed systems.
+    </p>
+    <p><a class="download" href="/Vinith_Sudhir_Resume.pdf">Download my resume (PDF)</a></p>
+    <object data="/Vinith_Sudhir_Resume.pdf" type="application/pdf" aria-label="Resume PDF">
+      <p>Your browser cannot show the PDF here. Use the download link above.</p>
+    </object>
+  </div>
+</Base>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 2rem 0 1rem;
+  }
+  .download {
+    font-family: var(--sans);
+    font-weight: 600;
+  }
+  object {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+</style>

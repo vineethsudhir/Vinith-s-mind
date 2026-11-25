@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import { links } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Vinith Sudhir is a backend engineer in Bengaluru who builds distributed systems and search.',
+} = Astro.props;
+const fullTitle = title ? `${title} | Vinith Sudhir` : 'Vinith Sudhir';
+const path = Astro.url.pathname;
+const current = (href: string) => (href === '/' ? path === '/' : path.startsWith(href)) ? 'page' : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="alternate" type="application/rss+xml" title="Vinith Sudhir: blog" href="/rss.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(path, Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="home" href="/">Vinith Sudhir</a>
+        <nav aria-label="Main">
+          <a href="/about/" aria-current={current('/about/')}>About</a>
+          <a href="/blog/" aria-current={current('/blog/')}>Blog</a>
+          <a href="/resume/" aria-current={current('/resume/')}>Resume</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <ul class="elsewhere">
+          {links.map((l) => <li><a href={l.href} rel="me">{l.label}</a></li>)}
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <p>Written in Bengaluru.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const fmt = (d: Date) => d.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title="Blog" description="Notes and essays by Vinith Sudhir.">
+  <div class="wrap">
+    <h1>Blog</h1>
+    <ul>
+      {
+        posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+            {p.data.summary && <p>{p.data.summary}</p>}
+            <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 2rem 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  li > a {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  li p {
+    margin: 0.25rem 0;
+  }
+  time {
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--mist);
+  }
+</style>

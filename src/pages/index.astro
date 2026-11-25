@@ -1,0 +1,162 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Guide from '../components/Guide.astro';
+import { guide, built, projects, links } from '../data/site';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+const fmt = (d: Date) => d.toLocaleDateString('en-IN', { year: 'numeric', month: 'long' });
+---
+
+<Base>
+  <section class="intro wrap">
+    <h1>I build the backend systems that help people find something to watch.</h1>
+    <p class="lede">
+      I'm Vinith, a backend engineer in Bengaluru. For three and a half years I worked on search and
+      discovery for live TV at Amazon Prime Video.
+    </p>
+  </section>
+
+  <Guide items={guide} label="Timeline" />
+
+  <section class="wrap block" aria-labelledby="built-title">
+    <h2 id="built-title">What I built at Prime Video</h2>
+    <dl class="built">
+      {
+        built.map((b) => (
+          <div>
+            <dt>{b.title}</dt>
+            <dd>{b.text}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    <p>
+      I was also the Security Policy Advisor for my organization: I wrote threat models and took services
+      through security reviews.
+    </p>
+  </section>
+
+  <section class="wrap block" aria-labelledby="projects-title">
+    <h2 id="projects-title">Projects</h2>
+    <p>
+      I work with AI coding tools every day: Claude Code, Codex, OpenCode, Antigravity and Cursor, plus MCP
+      integrations and local models on Ollama.
+    </p>
+    <ul class="plain">
+      {
+        projects.map((p) => (
+          <li>
+            <a href={p.href}>{p.title}</a>: {p.text}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap block" aria-labelledby="life-title">
+    <h2 id="life-title">Outside work</h2>
+    <p>
+      I run trail ultras, ride gravel, and I'm slowly turning into a triathlete for an Ironman 70.3.
+      <a href="/about/">More about me</a>.
+    </p>
+  </section>
+
+  <section class="wrap block" aria-labelledby="blog-title">
+    <h2 id="blog-title">From the blog</h2>
+    <ul class="posts">
+      {
+        posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+            <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap block" aria-labelledby="contact-title">
+    <h2 id="contact-title">Get in touch</h2>
+    <p>
+      The best way to reach me is <a href="https://www.linkedin.com/in/vinithsudhir/">LinkedIn</a>. My
+      <a href="/resume/">resume</a> is here too.
+    </p>
+    <ul class="elsewhere">
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    padding-block: 3rem 2.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    margin: 0 0 1.5rem;
+    max-width: 18ch;
+  }
+
+  .lede {
+    font-size: 1.3125rem;
+    color: var(--mist);
+    max-width: 34rem;
+  }
+
+  .block {
+    padding-top: 3rem;
+  }
+
+  .built {
+    margin: 0 0 1.25rem;
+  }
+
+  .built div {
+    margin-bottom: 1.25rem;
+  }
+
+  .built dt {
+    font-family: var(--sans);
+    font-weight: 600;
+  }
+
+  .built dd {
+    margin: 0.15rem 0 0;
+  }
+
+  .plain {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .posts li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .posts time {
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--mist);
+    white-space: nowrap;
+  }
+
+
+</style>

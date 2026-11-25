@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import { links, strava } from '../data/site';
+---
+
+<Base title="About" description="Who Vinith Sudhir is outside work: running, riding, training and more.">
+  <section class="wrap intro">
+    <h1>About me</h1>
+    <p class="lede">
+      I'm Vinith. I live in Bengaluru, back home after six years in the US: two in New Jersey for my master's and
+      then Seattle. Outside work I spend most of my time running, riding and training.
+    </p>
+  </section>
+
+  <div class="wrap sections">
+    <section>
+      <h2>Training for</h2>
+      <p>
+        An Ironman 70.3 in 2027. Running is where I started: I trained for the Eugene Marathon and I race 50K trail
+        ultras. Swimming is my weak leg, so for now that means a lot of laps in the pool.
+      </p>
+      {strava && <p>Every run and ride goes up on <a href={strava}>Strava</a>.</p>}
+    </section>
+
+    <section>
+      <h2>Curious about</h2>
+      <p>
+        Economics, mostly at the level of systems: food security policy, land value tax, how the EV market works, and
+        what AI does to labour. I'm also a big fan of <cite>Jet Lag: The Game</cite>. In Seattle I designed my own
+        hide-and-seek game around Sound Transit, with house rules.
+      </p>
+    </section>
+
+    <section>
+      <h2>Food</h2>
+      <p>
+        I cook plant-based and high-protein, and I keep it clean and simple. My usual order is an oat matcha latte.
+      </p>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Kannada is my first language. I work in English and get by in Hindi.</p>
+    </section>
+
+    <section>
+      <h2>Say hello</h2>
+      <ul class="elsewhere">
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .intro {
+    padding-block: 3rem 2rem;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
+    margin: 0 0 1.5rem;
+  }
+
+  .lede {
+    font-size: 1.3125rem;
+    color: var(--mist);
+    max-width: 36rem;
+  }
+
+  .sections section {
+    padding-top: 2.5rem;
+  }
+
+  .sections h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .sections .elsewhere {
+    font-family: var(--sans);
+  }
+</style>
