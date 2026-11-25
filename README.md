@@ -2,7 +2,7 @@
 
 This is the source for my personal site, [vinith.in](https://vinith.in). The site uses [Astro](https://astro.build). It is a static site: the build makes HTML files only.
 
-The `main` branch has the source for the new site. The `gh-pages` branch has the old 2022 Jekyll blog. GitHub Pages publishes the `gh-pages` branch at blog.vinith.in.
+The `main` branch has the source. The `gh-pages` branch has the old 2022 Jekyll blog. It is not published.
 
 ## Run the site on your computer
 
@@ -52,10 +52,9 @@ npm run preview    # look at the built site
 
 ## Publish
 
-GitHub Pages is on for this repository. At this time, it publishes the old blog from the `gh-pages` branch. To publish the new site:
+GitHub Pages publishes the site at [vinith.in](https://vinith.in). The workflow `.github/workflows/deploy.yml` builds the site and publishes `dist/` each time you push to `main`. You can also start it manually in the **Actions** tab.
 
-1. Add a workflow that builds the site and deploys `dist/` with GitHub Actions.
-2. In **Settings > Pages**, set **Source** to **GitHub Actions**.
-3. In **Settings > Pages**, set the custom domain to `vinith.in`. The file `public/CNAME` also sets this domain.
-4. At your domain registrar, point `vinith.in` to GitHub Pages (four `A` records for the apex domain).
-5. Push to `main`. The workflow builds and publishes the site.
+- **Settings > Pages > Source** must be **GitHub Actions**.
+- The custom domain is `vinith.in`. The file `public/CNAME` also sets this domain.
+- The DNS records for `vinith.in` are at Gandi.
+- `blog.vinith.in` forwards to `vinith.in/blog/` with Gandi web forwarding.
