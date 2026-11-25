@@ -2,7 +2,7 @@
 
 This is the source for my personal site, [vinith.in](https://vinith.in). The site uses [Astro](https://astro.build). It is a static site: the build makes HTML files only.
 
-The `site-draft` branch has the new site. The `main` branch has the old 2022 Jekyll blog.
+The `main` branch has the source for the new site. The `gh-pages` branch has the old 2022 Jekyll blog. GitHub Pages publishes the `gh-pages` branch at blog.vinith.in.
 
 ## Run the site on your computer
 
@@ -52,11 +52,10 @@ npm run preview    # look at the built site
 
 ## Publish
 
-GitHub Pages cannot publish a private repository on a free account. Use Cloudflare Pages or Netlify instead. Both are free for this site.
+GitHub Pages is on for this repository. At this time, it publishes the old blog from the `gh-pages` branch. To publish the new site:
 
-1. Connect the host to this repository and select the branch to publish.
-2. Set the build command to `npm run build` and the output folder to `dist`.
-3. Add the custom domain `vinith.in` in the host settings.
-4. At your domain registrar, add the DNS records that the host gives you.
-
-The file `public/CNAME` is only necessary if you use GitHub Pages.
+1. Add a workflow that builds the site and deploys `dist/` with GitHub Actions.
+2. In **Settings > Pages**, set **Source** to **GitHub Actions**.
+3. In **Settings > Pages**, set the custom domain to `vinith.in`. The file `public/CNAME` also sets this domain.
+4. At your domain registrar, point `vinith.in` to GitHub Pages (four `A` records for the apex domain).
+5. Push to `main`. The workflow builds and publishes the site.
