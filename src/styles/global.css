@@ -122,6 +122,37 @@ p {
   gap: 1.25rem;
 }
 
+.site-header nav {
+  align-items: center;
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--mist);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  border-color: var(--mist);
+}
+
+.theme-toggle .i-sun,
+.theme-toggle[data-dark='true'] .i-moon {
+  display: none;
+}
+
+.theme-toggle[data-dark='true'] .i-sun {
+  display: block;
+}
+
 .site-header nav a {
   color: var(--mist);
   text-decoration: none;
